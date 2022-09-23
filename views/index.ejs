@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image uploader</title>
+</head>
+<body>
+    <form action="/" enctype="multipart/form-data" method="POST">
+        <input type="file" name="image" placeholder="upload-images">
+        <button value="submit">Submit</button>
+    </form>
+    <% image.forEach(function(image){ %>
+        <img src="data:image/<%=image.contentType%>;base64,<%=image.imagebase64%>" alt="images">
+    <% }) %>
+</body>
+</html>
